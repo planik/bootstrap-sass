@@ -232,6 +232,10 @@
 
       var complete = function () {
         var prevHoverState = that.hoverState
+
+        // Optor Christian. 19. Juni 2020. In der Planungssicht gab es immer Fehler, falls man einen Dienst
+        // zurücklegt und ein Tooltip ist offen...
+        //https://sentry.io/organizations/optor-ag-q0/issues/1733309121/?project=1221515&query=that.%24element&statsPeriod=14d
         if(that.$element != null) {
           that.$element.trigger('shown.bs.' + that.type)
           that.hoverState = null
